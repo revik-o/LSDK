@@ -1,0 +1,12 @@
+[workspace.package]
+name = "LSDK"
+version = "1.0.0"
+edition = "2024"
+
+[workspace]
+resolver = "2"
+members = ["cli"]
+default-members = ["cli"]
+
+[workspace.dependencies]
+cli = { path = "cli" }

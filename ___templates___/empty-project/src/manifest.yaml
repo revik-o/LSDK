@@ -1,0 +1,22 @@
+version: 1
+
+project:
+  config:
+    name: "My Project"
+    description: "A new project"
+    version: "0.0.1"
+    compatibility: "Universal"
+  lifecycle:
+    entry-point: "main.c" # TODO: Implement main function
+
+application:
+  title: "My Application"
+  description: "A new application"
+  icon: "icon.png"
+  categiries: "Development;Network;Utility;TextEditor"
+  keywords: "my_application;"
+  mime-type: "text/plain;application/x-zerosize"
+  actions:
+    - name: "Todo"
+      icon: "todo.png"
+      command: "todo %U"
