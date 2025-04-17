@@ -407,7 +407,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "lsdk_cli"
+name = "lsdk"
 version = "1.0.0"
 dependencies = [
  "color-eyre",

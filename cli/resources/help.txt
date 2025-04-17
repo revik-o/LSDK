@@ -1,0 +1,45 @@
+Linux Software Development Kit
+
+SYNOPSIS:
+  lsdk [command] [options]
+
+AVAILABLE COMMANDS:
+
+    GENERAL:
+    help, -h, --help, -?   -> Display this help message
+    version, -v, --version -> Display version information
+
+    PROJECT MANAGEMENT:
+    new project -n <name> -t <type>
+        Create a new project
+        Example: lsdk new project -n myapp -t gui
+
+    project list
+        List all available project types
+
+    MODULE MANAGEMENT:
+    new module -n <name> -t <type>
+        Create a new module in current project
+        Example: lsdk new module -n mainscreen -t activity
+
+    module list
+        List all available module types
+
+    TYPE REFERENCE:
+
+    Project Types:
+    gui                  Desktop GUI application
+
+    Module Types:
+    activity             New activity for GUI application
+
+    USAGE EXAMPLES:
+    1. Create a GUI project:
+        lsdk new project -n myapp -t gui
+
+    2. Add an activity module:
+        lsdk new module -n mainscreen -t activity
+
+    3. List available project types:
+        lsdk project list
+        lsdk module list

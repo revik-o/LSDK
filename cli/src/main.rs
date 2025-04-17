@@ -1,6 +1,7 @@
 mod args_declaration;
 mod utils;
 
+use args_declaration::{CommandToken, HELP_INFO};
 /// A Ratatui example that demonstrates a basic hello world application.
 ///
 /// This example runs with the Ratatui library code in the branch that you are currently
@@ -14,6 +15,7 @@ use crossterm::event::{self, Event, KeyCode};
 use ratatui::widgets::Paragraph;
 use ratatui::{DefaultTerminal, Frame};
 use std::time::Duration;
+use utils::args::parce_args_to_tokens;
 
 /// This is a bare minimum example. There are many approaches to running an application loop, so
 /// this is not meant to be prescriptive. It is only meant to demonstrate the basic setup and
@@ -22,11 +24,35 @@ use std::time::Duration;
 /// This example does not handle events or update the application state. It just draws a greeting
 /// and exits when the user presses 'q'.
 fn main() -> Result<()> {
-    color_eyre::install()?; // augment errors / panics with easy to read messages
-    let terminal = ratatui::init();
-    let app_result = run(terminal).context("app loop failed");
-    ratatui::restore();
-    app_result
+    // color_eyre::install()?; // augment errors / panics with easy to read messages
+    // let terminal = ratatui::init();
+    // let app_result = run(terminal).context("app loop failed");
+    // ratatui::restore();
+    // app_result
+    let tokens = parce_args_to_tokens();
+
+    if tokens.len() > 0 {
+        let main_token = tokens[0].command;
+        match main_token {
+            CommandToken::Version => {
+                println!("v1.0.0")
+            }
+            CommandToken::Project => {
+                // TODO
+            }
+            CommandToken::Module => {
+                // TODO
+            }
+            CommandToken::Help => {
+                println!("{}", HELP_INFO)
+            }
+            _ => {
+                // TODO
+            }
+        }
+    }
+
+    Ok(())
 }
 
 /// Run the application loop. This is where you would handle events and update the application
@@ -34,12 +60,35 @@ fn main() -> Result<()> {
 /// possible, for example, you could have multiple application states and switch between them based
 /// on events, or you could have a single application state and update it based on events.
 fn run(mut terminal: DefaultTerminal) -> Result<()> {
-    loop {
-        terminal.draw(draw)?;
-        if should_quit()? {
-            break;
+    let tokens = parce_args_to_tokens();
+
+    if tokens.len() > 0 {
+        let main_token = tokens[0].command;
+        match main_token {
+            CommandToken::Version => {
+                // TODO
+            }
+            CommandToken::Project => {
+                // TODO
+            }
+            CommandToken::Module => {
+                // TODO
+            }
+            CommandToken::Help => {
+                println!("{}", HELP_INFO)
+            }
+            _ => {
+                // TODO
+            }
         }
     }
+
+    // loop {
+    //     terminal.draw(draw)?;
+    //     if should_quit()? {
+    //         break;
+    //     }
+    // }
     Ok(())
 }
 

@@ -1,4 +1,4 @@
-use std::env::{self, Args};
+use std::env;
 
 use crate::args_declaration::{
     ArgsDeclaration, CommandDeclarationPosition, CommandToken, supported_commands,
