@@ -3,6 +3,11 @@ name = "lsdk"
 version = "1.0.0"
 edition = "2024"
 
+[profile.release]
+opt-level = 3
+debug = false
+lto = true
+
 [dependencies]
 color-eyre = "0.6.3" # https://crates.io/crates/color-eyre
 crossterm = "0.29.0" # https://crates.io/crates/crossterm

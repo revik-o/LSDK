@@ -1,6 +1,6 @@
 pub const HELP_INFO: &str = include_str!("../resources/help.txt");
 
-#[derive(Clone, Copy, Debug)]
+#[derive(Clone, Copy, Debug, PartialEq)]
 pub enum CommandToken {
     New = 0,
     Help = 1,
