@@ -408,7 +408,7 @@ dependencies = [
 
 [[package]]
 name = "lsdk"
-version = "1.0.0"
+version = "0.0.1"
 dependencies = [
  "color-eyre",
  "crossterm 0.29.0",
